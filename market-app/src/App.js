@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import firebase from './firebase.js'
+import shelf from './assets/resizedShelf.png'
+import carrot from './assets/carrot.png'
 
 class App extends Component {
 
@@ -8,7 +10,9 @@ class App extends Component {
     super();
     this.state = {
       groceryItems: [],
-      purchase: '',
+      userPurchase: '',
+      itemsPurchased: '',
+      shoppingItems: [],
     }
   }
 
@@ -22,7 +26,7 @@ class App extends Component {
       for(let key in items.shoppingStore) {
         const individualItems = {
           groceryID: key,
-          groceryItem: items[key],
+          groceryItem: items.shoppingStore[key],
         }
 
         newItems.push(individualItems)
@@ -32,7 +36,7 @@ class App extends Component {
       for (let key in items.shoppingList) {
         const baggedItems = {
           groceryID: key,
-          groceryItem: items[key],
+          groceryItem: items.shoppingList[key],
         }
 
         bagItems.push(baggedItems)
@@ -46,13 +50,11 @@ class App extends Component {
   }
 
   purchasedItem = (event) => {
-    // console.log('I was clicked', event.target.getAttribute('data-key'))
-    // Name of the item clicked 
     console.log(this.state.groceryItems[event.target.getAttribute('data-key')])
-    // Create an object to storage the items
+    
     const shoppingItemName = this.state.groceryItems[event.target.getAttribute('data-key')]
     const timesClicked = 1
-    // push the object to firebase in the shoppinList folder
+    
     const shopping = {
       item: shoppingItemName,
       count: timesClicked,
@@ -74,14 +76,12 @@ class App extends Component {
 
   
   addToCart = (event) => {
-    
-    
-    const itemToAddToCart = this.state.userPurchase;
+    const itemToAddToCart = this.state.itemsPurchased;
     
     if(itemToAddToCart !== '') {
-      const userPurchase = itemToAddToCart
+      const itemsPurchased = itemToAddToCart
       this.setState({
-        userPurchase: '',
+        itemsPurchased: '',
       })
     }
   }
@@ -91,39 +91,50 @@ class App extends Component {
   render() {
     return(
       <div>
-        <h1>Shopping Cart</h1>
+        <header>
+            <h1>Quick Market</h1>
+        </header>
 
-          <div className="groceryStore">
-            <ul>
-              {/* {console.log(this.state.groceryItems)} */}
-              {this.state.groceryItems.map((groceryValue, i) => {
-                // console.log(groceryValue)
-                return(
-                  <li onClick={this.purchasedItem} data-key={i} key={i}>
-                    {groceryValue.groceryID}
-                  </li>
-                )
-              })}
-            </ul>
+        <main className="groceryStore wrapper">
+          
+          <div className="divider">
+              <h2>Shopping Store</h2>
+              <ul className="gridStore">
+              <img src={shelf} alt="wood shelf with a 4 by 4 size"/>
+                {this.state.groceryItems.map((groceryValue, i) => {
+                  return(
+                    <li onClick={this.purchasedItem} data-key={i} key={i}>
+                      {/* <img src={carrot} alt="" /> */}
+                      {groceryValue.groceryID}
+                    </li>
+                  )
+                })}
+              </ul>
           </div>
 
           <div className="shoppingList">
-            <h2>Shopping List</h2>
-
-            {/* <ul>
-              {this.state.userPurchase.map((purchaseValue, i) => {
-                  return (
-                    <li onChange={this.addToCart} key={i}>
-                      {purchaseValue.groceryID}
+              <h2>Shopping List</h2>
+              <ul>
+                {this.state.shoppingItems.map((groceryValue, i) => {
+                  return(
+                    <li key={i} className="results">
+                      {groceryValue.groceryItem}
+                      <div className="counter">
+                        <a href=""><span className="minus"> - </span></a>
+                        <span className="amount"> # </span>
+                        <a href=""><span className="plus"> + </span></a>
+                      </div>
                     </li>
                   )
-              })}
-            </ul> */}
+                })}
+            </ul>
           </div>
 
-          <footer>
-            Copyright &copy; Nuno Macedo - 2019
-          </footer>
+        </main>
+
+        <footer>
+          <p className="wrapper">Copyright &copy; Nuno Macedo - 2019</p>
+        </footer>
       </div>
     );
   }

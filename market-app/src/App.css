@@ -10,11 +10,15 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 /* Global Styles Start Here */
 body {
-  font-size: 62.5%;
+  margin: 0 auto;
 }
 
 html {
-
+  font-size: 62.5%;
+  background-image: url(./assets/thomas-le-pRJhn4MbsMM-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .wrapper {
@@ -28,17 +32,116 @@ img {
   display: block;
 }
 
-/* Global Styles End Here */
 
 h1, h2 {
   text-align: center;
   font-size: 2.5rem;
+  margin: 0;
+  padding: 2%;
+  color: #fff;
 }
 
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Global Styles End Here */
+
+
+
+header {
+  max-height: 10vh;
 }
 
-li {
-  font-size: 1.6rem;
+.groceryStore {
+  display: flex;
+  min-height: 85vh;
+}
+
+.divider {
+  width: 50%;
+}
+
+.gridStore {
+  display: grid;
+  grid-template-columns: repeat(4, 113px);
+  grid-template-rows: repeat(4, 113px);
+  grid-gap: 15px;
+  text-align: center;
+  align-items: center;
+  margin: 0;
+  padding: 22px;
+  position: relative;
+}
+
+.gridStore img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.gridStore li {
+  font-size: 1.4rem;
+}
+
+.gridStore li:hover,
+.gridStore li:focus {
+  cursor: url(./assets/cursorIcon.png);
+}
+
+.shoppingList {
+  width: 50%;
+  background-image: url(./assets/notePad1.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.shoppingList h2 {
+  font-size: 2.5rem;
+  padding-top: 35px;
+}
+
+.shoppingList ul {
+  margin-left: 35px;
+}
+
+.shoppingList li {
+  font-size: 2rem;
+  padding-top: 3%;
+  padding-left: 5%;
+}
+
+.results {
+  display: flex;
+}
+
+.counter {
+  margin-left: 50%;
+}
+
+.counter a {
+  text-decoration: none;
+}
+
+/* .gridList {
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 15px;
+} */
+
+footer {
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  padding: 10px;
+  min-height: 5vh;
 }
