@@ -21,6 +21,16 @@ html {
   background-size: 100%;
 }
 
+@font-face {
+  font-family: "Neon";
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf)
+}
+
+@font-face {
+  font-family: "Beth Ellen";
+  src: url(./Font/BethEllenRegular.ttf);
+}
+
 .wrapper {
   max-width: 1080px;
   width: 80%;
@@ -43,6 +53,7 @@ h1, h2 {
 }
 
 h2 {
+  font-family: "Beth Ellen";
   text-shadow: 0 0 3rem rgb(0, 0, 0);
 }
 
@@ -155,12 +166,22 @@ header h1 {
 
 .gridStore li {
   font-size: 1.4rem;
+  padding: 30px;
 }
 
 .gridStore li:hover,
 .gridStore li:focus {
   cursor: url(./assets/cursorIcon.png), auto;
 }
+
+.groceryProduct {
+  max-height: 30%;
+  max-width: 20%;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+
 /* Store Products Styles Ends Here */
 
 /* Shop List Styles Start Here */

@@ -17,7 +17,7 @@ import strawberry from './assets/strawberry.png';
 import tomato from './assets/tomato.png';
 import watermelon from './assets/watermelon.png';
 
-const defaultProducts = [
+const products = [
     {
         name: 'apple',
         img: apple,
@@ -84,37 +84,30 @@ const defaultProducts = [
     }
 ]
 
-const ShoppingItems = ({ selectItem, products }) => {
-    return (
-        <div className="itemsContainer">
-            <h2>Shopping Store </h2>
-            <ul className="gridStore">
-                {/* {defaultProducts.map((product, i) => {
-                    const exists = products.includes(product.name)
-                    return (
-                        <li key={i}>
-                            <button
-                                className={['suggestionsBtn', exists ? 'greyScale' : 'okay'].join(' ')}
-                                onClick={exists ? null : () => selectSuggestion(product.name)}>
-                                <img src={product.img} alt={product.name} />
-                            </button>
-                        </li>
-                    );
-                })} */}
+// const ShoppingItems = ({ selectItem, products }) => {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             : 0,
+//         };
+//     }
 
-                <img src={shelf} alt="wood shelf with a 4 by 4 size" />
-                {this.state.groceryItems.map((groceryValue, i) => {
-                    return (
-                        <li onClick={this.purchasedItem} data-key={i} key={i}>
-                            <img src={product.img} alt={product.name} />
-                            {groceryValue.groceryID}
-                        </li>
-                    )
-                })}
-            </ul>
-        </div>
+//     return (
+//         <div className="itemsContainer">
+//             <ul className="gridStore">
+//                 <img src={shelf} alt="wood shelf with a 4 by 4 size" />
+//                 {this.state.groceryItems.map((groceryValue, i) => {
+//                     return (
+//                         <li onClick={this.purchasedItem} data-key={i} key={i}>
+//                             <img src={product.img} alt={product.name} />
+//                             {groceryValue.groceryID}
+//                         </li>
+//                     )
+//                 })}
+//             </ul>
+//         </div>
 
-    );
-}
+//     );
+// }
 
 export default ShoppingItems;

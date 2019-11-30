@@ -11,7 +11,7 @@ class Header extends Component {
     render() {
         return (
             <header>
-                <h1>Nuno's Market</h1>
+                <h1>Juno's Market</h1>
                 <div className="neon glow">
                     <h3 className="glow">open</h3>
                 </div>
@@ -20,4 +20,4 @@ class Header extends Component {
     };
 };
 
-export default Header
+export default Header;

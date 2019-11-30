@@ -1,9 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import shelf from './assets/resizedShelf.png';
+import apple from './assets/Apple.png';
+
 import firebase from './firebase.js';
-import Increment from './Increment.js';
 import Header from './Header.js';
+import Increment from './Increment.js';
+// import ShoppingItems from './ShoppingItems.js';
 
 class App extends Component {
 
@@ -17,123 +20,123 @@ class App extends Component {
         }
     }
 
-  componentDidMount() {
-      const dbRef = firebase.database().ref();
+    componentDidMount() {
+        const dbRef = firebase.database().ref();
 
-      dbRef.on('value', (snapshot) => {
-          const items = snapshot.val();
+        dbRef.on('value', (snapshot) => {
+            const items = snapshot.val();
 
-          const newItems = [];
-          for(let key in items.shoppingStore) {
-            const individualItems = {
-                groceryID: key,
-                groceryItem: items.shoppingStore[key],
+            const newItems = [];
+            for (let key in items.shoppingStore) {
+                const individualItems = {
+                    groceryID: key,
+                    groceryItem: items.shoppingStore[key],
+                }
+
+                newItems.push(individualItems)
             }
 
-            newItems.push(individualItems)
-          }
+            const bagItems = [];
+            for (let key in items.shoppingList) {
+                const baggedItems = {
+                    groceryID: key,
+                    groceryItem: items.shoppingList[key],
+                }
 
-          const bagItems = [];
-          for (let key in items.shoppingList) {
-              const baggedItems = {
-                  groceryID: key,
-                  groceryItem: items.shoppingList[key],
-              }
+                bagItems.push(baggedItems)
+            }
 
-              bagItems.push(baggedItems)
-          }
+            this.setState({
+                groceryItems: newItems,
+                shoppingItems: bagItems,
+            })
+        })
+    }
 
-          this.setState({
-              groceryItems: newItems,
-              shoppingItems: bagItems,
-          })
-      })
-  }
+    purchasedItem = (event) => {
+        const shoppingItemName = this.state.groceryItems[event.target.getAttribute('data-key')]
 
-  purchasedItem = (event) => {
-      const shoppingItemName = this.state.groceryItems[event.target.getAttribute('data-key')]
-    
-      const shopping = {
-          item: shoppingItemName,
-      }
-    
-      const dbRef = firebase.database().ref().child('shoppingList')
-    
-      if(shoppingItemName !== '') {
-          dbRef.push(shopping.item.groceryID);
-          this.setState({
-              userPurchase: '',
-          })
-      } 
+        const shopping = {
+            item: shoppingItemName,
+        }
 
-      this.setState ({
-          purchase: event.target.getAttribute('data-key'),
-      })
-  }
-  
-  addToCart = (event) => {
-      const itemToAddToCart = this.state.itemsPurchased;
-    
-      if(itemToAddToCart !== '') {
-          // const itemsPurchased = itemToAddToCart
-          this.setState({
-              itemsPurchased: '',
-          })
-      }
-  }
+        const dbRef = firebase.database().ref().child('shoppingList')
 
-  removeFromCart = (event) => {
-      const dbRef = firebase.database().ref().child('shoppingList');
+        if (shoppingItemName !== '') {
+            dbRef.push(shopping.item.groceryID);
+            this.setState({
+                userPurchase: '',
+            })
+        }
 
-      dbRef.child(event.target.id).remove();
-  }
-  
-  render() {
-      return(
-          <div>
-              <Header />
+        this.setState({
+            purchase: event.target.getAttribute('data-key'),
+        })
+    }
 
-              <main className="groceryStore wrapper">
-                  <div className="shoppingStore">
-                      <h2>Shopping Store</h2>
-                      <ul className="gridStore">
-                          <img src={shelf} alt="wood shelf with a 4 by 4 size"/>
-                          {this.state.groceryItems.map((groceryValue, i) => {
-                            return(
-                                <li onClick={this.purchasedItem} data-key={i} key={i}>
-                                  {groceryValue.groceryID}
-                                </li>
-                            )
-                        })}
-                      </ul>
-                  </div>
+    addToCart = (event) => {
+        const itemToAddToCart = this.state.itemsPurchased;
 
-                  <div className="shoppingList">
-                      <h2>Shopping List</h2>
-                      <ul>
-                          {this.state.shoppingItems.map((groceryValue, i) => {
-                            return(
-                                <li key={i} className="results">
-                                    <span id={groceryValue.groceryID} className="delete" onClick={this.removeFromCart}> x </span>
-                                    <div className="listItems">
-                                        {groceryValue.groceryItem}
-                                        <div className="counter">
-                                            <Increment />
+        if (itemToAddToCart !== '') {
+            this.setState({
+                itemsPurchased: '',
+            })
+        }
+    }
+
+    removeFromCart = (event) => {
+        const dbRef = firebase.database().ref().child('shoppingList');
+
+        dbRef.child(event.target.id).remove();
+    }
+
+    render() {
+        return (
+            <div>
+                <Header />
+
+                <main className="groceryStore wrapper">
+                    <div className="shoppingStore">
+                        <h2>Shopping Store</h2>
+                        <ul className="gridStore">
+                            <img className="self" src={shelf} alt="wood shelf with a 4 by 4 size" />
+                            {this.state.groceryItems.map((groceryValue, i) => {
+                                return (
+                                    <li onClick={this.purchasedItem} data-key={i} key={i}>
+                                        <img className="groceryProduct animated infinite bounce delay-2s" src={apple} alt="apple"/>
+                                        {groceryValue.groceryID}
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+
+                    <div className="shoppingList">
+                        <h2>Shopping List</h2>
+                        <ul>
+                            {this.state.shoppingItems.map((groceryValue, i) => {
+                                return (
+                                    <li key={i} className="results">
+                                        <span id={groceryValue.groceryID} className="delete" onClick={this.removeFromCart}> x </span>
+                                        <div className="listItems">
+                                            {groceryValue.groceryItem}
+                                            <div className="counter">
+                                                <Increment />
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            )
-                          })}
-                    </ul>
-                  </div>
-              </main>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                </main>
 
-              <footer>
-                  <p className="wrapper">Copyright &copy; Nuno Macedo - 2019</p>
-              </footer>
-        </div>
-      );
-  }
+                <footer>
+                    <p className="wrapper">Copyright &copy; Nuno Macedo - 2019</p>
+                </footer>
+            </div>
+        );
+    }
 }
 
 export default App;
