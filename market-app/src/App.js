@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import firebase from './firebase.js'
+import Increment from './Increment.js'
 import shelf from './assets/resizedShelf.png'
-import carrot from './assets/carrot.png'
 
 class App extends Component {
 
@@ -50,30 +50,27 @@ class App extends Component {
   }
 
   purchasedItem = (event) => {
-    console.log(this.state.groceryItems[event.target.getAttribute('data-key')])
-    
+    // console.log(this.state.groceryItems[event.target.getAttribute('data-key')])
     const shoppingItemName = this.state.groceryItems[event.target.getAttribute('data-key')]
-    const timesClicked = 1
     
     const shopping = {
       item: shoppingItemName,
-      count: timesClicked,
+      // itemCount: timesClicked,
     }
-
+    
     const dbRef = firebase.database().ref().child('shoppingList')
-  
+    
     if(shoppingItemName !== '') {
       dbRef.push(shopping.item.groceryID);
       this.setState({
         userPurchase: '',
       })
-    }
+    } 
 
     this.setState ({
       purchase: event.target.getAttribute('data-key'),
     })
   }
-
   
   addToCart = (event) => {
     const itemToAddToCart = this.state.itemsPurchased;
@@ -104,7 +101,6 @@ class App extends Component {
                 {this.state.groceryItems.map((groceryValue, i) => {
                   return(
                     <li onClick={this.purchasedItem} data-key={i} key={i}>
-                      {/* <img src={carrot} alt="" /> */}
                       {groceryValue.groceryID}
                     </li>
                   )
@@ -120,9 +116,7 @@ class App extends Component {
                     <li key={i} className="results">
                       {groceryValue.groceryItem}
                       <div className="counter">
-                        <a href=""><span className="minus"> - </span></a>
-                        <span className="amount"> # </span>
-                        <a href=""><span className="plus"> + </span></a>
+                        <Increment />
                       </div>
                     </li>
                   )

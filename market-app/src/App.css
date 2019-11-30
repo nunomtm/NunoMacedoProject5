@@ -113,29 +113,30 @@ header {
 
 .shoppingList li {
   font-size: 2rem;
-  padding-top: 3%;
+  padding-top: 2%;
   padding-left: 5%;
 }
 
 .results {
   display: flex;
+  justify-content: space-between;
+}
+
+.increment {
+  display: flex;
 }
 
 .counter {
-  margin-left: 50%;
+  padding-right: 15%;
 }
 
-.counter a {
-  text-decoration: none;
+.counter button {
+  background-color: transparent;
+  border: none;
 }
 
-/* .gridList {
-  display: grid;
-  flex-direction: column;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 15px;
-} */
+
+/* Footer Style Starts Here */
 
 footer {
   font-size: 1.4rem;
