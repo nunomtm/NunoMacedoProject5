@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/NunoMacedoProject5/precache-manifest.65aa2f6193dec5b5e4fce8aea0b1c2d8.js"
+  "/NunoMacedoProject5/precache-manifest.0c5250bee695451a57194e8574090927.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/NunoMacedoProject5/static/css/main.4996c7c5.chunk.css",
+    "main.css": "/NunoMacedoProject5/static/css/main.7c8df316.chunk.css",
     "main.js": "/NunoMacedoProject5/static/js/main.33170ab2.chunk.js",
     "main.js.map": "/NunoMacedoProject5/static/js/main.33170ab2.chunk.js.map",
     "runtime-main.js": "/NunoMacedoProject5/static/js/runtime-main.efff4c69.js",
@@ -8,9 +8,9 @@
     "static/js/2.34b8565c.chunk.js": "/NunoMacedoProject5/static/js/2.34b8565c.chunk.js",
     "static/js/2.34b8565c.chunk.js.map": "/NunoMacedoProject5/static/js/2.34b8565c.chunk.js.map",
     "index.html": "/NunoMacedoProject5/index.html",
-    "precache-manifest.65aa2f6193dec5b5e4fce8aea0b1c2d8.js": "/NunoMacedoProject5/precache-manifest.65aa2f6193dec5b5e4fce8aea0b1c2d8.js",
+    "precache-manifest.0c5250bee695451a57194e8574090927.js": "/NunoMacedoProject5/precache-manifest.0c5250bee695451a57194e8574090927.js",
     "service-worker.js": "/NunoMacedoProject5/service-worker.js",
-    "static/css/main.4996c7c5.chunk.css.map": "/NunoMacedoProject5/static/css/main.4996c7c5.chunk.css.map",
+    "static/css/main.7c8df316.chunk.css.map": "/NunoMacedoProject5/static/css/main.7c8df316.chunk.css.map",
     "static/media/App.css": "/NunoMacedoProject5/static/media/backgroundImage.2622bfd3.jpg",
     "static/media/apple.png": "/NunoMacedoProject5/static/media/apple.51e7b86c.png",
     "static/media/banana.png": "/NunoMacedoProject5/static/media/banana.73dcd6a1.png",
@@ -29,7 +29,7 @@
   "entrypoints": [
     "static/js/runtime-main.efff4c69.js",
     "static/js/2.34b8565c.chunk.js",
-    "static/css/main.4996c7c5.chunk.css",
+    "static/css/main.7c8df316.chunk.css",
     "static/js/main.33170ab2.chunk.js"
   ]
 }
