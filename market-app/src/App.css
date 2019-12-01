@@ -15,7 +15,7 @@ body {
 
 html {
     font-size: 62.5%;
-    background-image: url(./assets/headerBackground.jpg);
+    background-image: url(./assets/backgroundImage.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -143,19 +143,19 @@ header h1 {
 /* Store Products Styles Start Here */
 .groceryStore {
     display: flex;
+    flex-wrap: wrap;
     min-height: 85vh;
-    padding-top: 20px;
+    padding-top: 2%;
 }
 
 .shoppingStore {
     width: 50%;
-    margin-top: 2%;
 }
 
 .gridStore {
     display: grid;
-    grid-template-columns: repeat(4, 113px);
-    grid-template-rows: repeat(4, 113px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-gap: 15px;
     text-align: center;
     align-items: center;
@@ -190,22 +190,26 @@ header h1 {
     animation-delay: 0;
     animation-iteration-count: 2;
 }
-.groceryProduct:hover {
-}
 /* Store Products Styles Ends Here */
 
 /* Shop List Styles Start Here */
 .shoppingCart {
     width: 50%;
-    background-image: url(./assets/notePad.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
+}
+
+.shoppingCart .notePad {
+    position: absolute;
+    z-index: -1;
+    top: -10%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
 
 .shoppingCart h2 {
     font-size: 2.5rem;
-    padding-top: 22px;
 }
 
 .shoppingCart .delete {
@@ -219,13 +223,13 @@ header h1 {
 }
 
 .shoppingCart ul {
-    margin-left: 35px;
+    margin-left: 10%;
+    padding-top: 8%;
 }
 
 .shoppingCart li {
     font-size: 2rem;
-    padding-top: 2%;
-    padding-left: 5%;
+    padding-top: 1%;
 }
 
 .results {
@@ -261,10 +265,154 @@ header h1 {
 footer {
     font-size: 1.6rem;
     font-weight: bold;
+    text-align: center;
     color: #b22a2a;
     background: rgba(31, 30, 30, 0.9);
-    text-align: center;
-    padding: 10px;
+    display: flex;
+    align-items: center;
     min-height: 5vh;
 }
 /* Footer Style Ends Here */
+
+/* Responsive Design Starts Here */
+
+/* Ipad Landscape */
+ @media (max-width: 1024px) {
+    .groceryStore {
+        padding-top: 10%;
+    }
+    .shoppingCart .notePad {
+        top: -7%;
+    }
+    .shoppingCart ul {
+        padding-top: 5%;
+    }
+    .shoppingCart li {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 6rem;
+        padding-top: 1%;
+    }
+    .shoppingStore{
+        width: 52%;
+        padding-bottom: 10%;
+    }
+    .shoppingCart {
+        min-height: 44vh;
+        width: 60%;
+        padding-bottom: 15%;
+    }
+    .groceryStore {
+        min-height: auto;
+        justify-content: center;
+        padding-top: 2%;
+    }
+    .shoppingCart ul {
+        padding-top: 5%
+    }
+    .shoppingCart li {
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Same issue as above */
+    html {
+        background-size: 150%;
+    }
+
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    .neon {
+        width: 15%;
+        top: 6%;
+    }
+
+    .glow {
+        font-size: 1rem;
+    }
+
+    .shoppingStore {
+        width: 80%;
+    }
+
+    .shoppingCart {
+        width: 100%;
+        padding-top: 5%;
+    }
+}
+
+@media (max-width: 415px) {
+    /* Same issue as above */
+    
+    header h1 {
+        font-size: 3rem;
+    }
+
+    .shoppingStore {
+        width: 90%;
+    }
+
+    .shoppingCart ul {
+        padding-top: 4%;
+    }
+
+    .shoppingCart li {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 375px) {
+    header h1 {
+        font-size: 2.6rem;
+    }
+
+    .neon {
+        top: 20%;
+    }
+
+    .glow {
+        margin: 0;
+    }
+
+    .gridStore {
+        padding: 12px;
+    }
+
+    .shoppingCart {
+        padding-top: 5%;
+    }
+
+    .shoppingCart ul {
+        padding-top: 5%;
+    }
+
+    .shoppingCart li {
+        padding-top: 0.5%;
+    }
+}
+
+@media (max-width: 320px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .neon {
+        top: 15%;
+    }
+
+    .shoppingStore h2,
+    .shoppingCart h2 {
+        font-size: 2.2rem;
+    }
+
+    .shoppingCart li {
+        font-size: 1.3rem;
+    }
+}

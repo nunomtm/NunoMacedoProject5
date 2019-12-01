@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from './firebase.js';
 import './App.css';
 import shelf from './assets/resizedShelf.png';
+import notePad from './assets/notePad2.png';
 import images from './images';
 import Header from './Header.js';
 import StoreItems from './StoreItems.js';
@@ -93,6 +94,7 @@ class App extends Component {
                     <div className="shoppingCart">
                         <h2>Shopping Cart</h2>
                         <ul>
+                            <img className="notePad" src={notePad} alt="small white note pad" />
                             {this.state.groceryCart.map((groceryValue, i) => {
                                 return (
                                     <ListItem
