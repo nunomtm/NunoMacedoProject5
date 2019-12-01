@@ -224,7 +224,7 @@ header h1 {
 
 .shoppingCart ul {
     margin-left: 10%;
-    padding-top: 8%;
+    padding-top: 5%;
 }
 
 .shoppingCart li {
@@ -292,6 +292,7 @@ footer {
     }
 }
 
+/* Ipad Portrait */
 @media (max-width: 768px) {
     header h1 {
         font-size: 6rem;
@@ -319,50 +320,43 @@ footer {
     }
 }
 
+/* Mobile Responsive Starts Below */
 @media (max-width: 480px) {
-    /* Same issue as above */
     html {
         background-size: 150%;
     }
-
     header h1 {
         font-size: 3.5rem;
     }
-
     .neon {
         width: 15%;
         top: 6%;
     }
-
     .glow {
         font-size: 1rem;
     }
-
     .shoppingStore {
         width: 80%;
     }
-
     .shoppingCart {
         width: 100%;
         padding-top: 5%;
     }
+    .shoppingCart ul {
+        padding-top: 2%;
+    }
 }
 
 @media (max-width: 415px) {
-    /* Same issue as above */
-    
     header h1 {
         font-size: 3rem;
     }
-
     .shoppingStore {
         width: 90%;
     }
-
     .shoppingCart ul {
-        padding-top: 4%;
+        padding-top: 1%;
     }
-
     .shoppingCart li {
         font-size: 1.5rem;
     }
@@ -372,27 +366,24 @@ footer {
     header h1 {
         font-size: 2.6rem;
     }
-
     .neon {
         top: 20%;
     }
-
     .glow {
         margin: 0;
     }
-
     .gridStore {
         padding: 12px;
     }
-
     .shoppingCart {
         padding-top: 5%;
     }
-
-    .shoppingCart ul {
-        padding-top: 5%;
+    .shoppingCart .notePad {
+        top: 0;
     }
-
+    .shoppingCart ul {
+        padding-top: 7%;
+    }
     .shoppingCart li {
         padding-top: 0.5%;
     }
@@ -402,17 +393,15 @@ footer {
     header h1 {
         font-size: 2.2rem;
     }
-
     .neon {
         top: 15%;
     }
-
     .shoppingStore h2,
     .shoppingCart h2 {
         font-size: 2.2rem;
     }
-
     .shoppingCart li {
         font-size: 1.3rem;
     }
 }
+/* Responsive Styles Ends Here */
