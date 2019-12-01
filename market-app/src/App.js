@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import firebase from './firebase.js';
 import './App.css';
 import shelf from './assets/resizedShelf.png';
-import firebase from './firebase.js';
+import images from './images';
 import Header from './Header.js';
+import StoreItems from './StoreItems.js';
 import ListItem from './ListItem'
 import Footer from './Footer.js';
-import images from './images';
 
 
 class App extends Component {
@@ -14,8 +15,7 @@ class App extends Component {
         super();
         this.state = {
             groceryItems: [],
-            itemsPurchased: '',
-            shoppingItems: [],
+            groceryCart: [],
         }
     }
 
@@ -23,37 +23,37 @@ class App extends Component {
         const dbRef = firebase.database().ref();
 
         dbRef.on('value', (snapshot) => {
-            const items = snapshot.val();
+            const product = snapshot.val();
 
-            const newItems = [];
-            for (let key in items.shoppingStore) {
-                const individualItems = {
-                    groceryID: key,
-                    groceryItem: items.shoppingStore[key],
+            const storeItems = [];
+            for (let key in product.Inventory) {
+                const individualProducts = {
+                    groceryName: key,
+                    groceryInventory: product.Inventory[key],
                 }
 
-                newItems.push(individualItems)
+                storeItems.push(individualProducts)
             }
 
-            const bagItems = [];
-            for (let key in items.shoppingList) {
-                const baggedItems = {
-                    groceryID: key,
-                    groceryItem: items.shoppingList[key],
+            const cartItems = [];
+            for (let key in product.shoppingCart) {
+                const cartProducts = {
+                    groceryName: key,
+                    groceryInventory: product.shoppingCart[key],
                 }
 
-                bagItems.push(baggedItems)
+                cartItems.push(cartProducts)
             }
 
             this.setState({
-                groceryItems: newItems,
-                shoppingItems: bagItems,
+                groceryItems: storeItems,
+                groceryCart: cartItems,
             })
         })
     }
 
     purchasedItem = (shoppingItemName) => {
-        const dbRef = firebase.database().ref().child('shoppingList')
+        const dbRef = firebase.database().ref().child('shoppingCart')
 
         dbRef.push({
             name: shoppingItemName,
@@ -61,18 +61,8 @@ class App extends Component {
         });
     }
 
-    addToCart = (event) => {
-        const itemToAddToCart = this.state.itemsPurchased;
-
-        if (itemToAddToCart !== '') {
-            this.setState({
-                itemsPurchased: '',
-            })
-        }
-    }
-
     removeFromCart = (event) => {
-        const dbRef = firebase.database().ref().child('shoppingList');
+        const dbRef = firebase.database().ref().child('shoppingCart');
 
         dbRef.child(event.target.id).remove();
     }
@@ -84,30 +74,34 @@ class App extends Component {
 
                 <main className="groceryStore wrapper">
                     <div className="shoppingStore">
-                        <h2>Shopping Store</h2>
+                        <h2>Store Inventory</h2>
                         <ul className="gridStore">
                             <img className="shelf" src={shelf} alt="wood shelf with a 4 by 4 size"/>
                             {this.state.groceryItems.map((groceryValue, i) => {
                                 return (
-                                    <li onClick={() => this.purchasedItem(groceryValue.groceryID)} data-key={i} key={i}>
-                                        <img className="groceryProduct animated swing" src={images[groceryValue.groceryID]} alt={groceryValue.groceryID}/>
-                                    </li>
+                                    <StoreItems 
+                                        cartItems={this.purchasedItem}
+                                        itemID={groceryValue.groceryName}
+                                        itemIndex={i}
+                                        productImg={images[groceryValue.groceryName]}
+                                    />
                                 )
                             })}
                         </ul>
                     </div>
 
-                    <div className="shoppingList">
-                        <h2>Shopping List</h2>
+                    <div className="shoppingCart">
+                        <h2>Shopping Cart</h2>
                         <ul>
-                            {this.state.shoppingItems.map((groceryValue, i) => {
+                            {this.state.groceryCart.map((groceryValue, i) => {
                                 return (
                                     <ListItem
-                                        itemID={groceryValue.groceryID}
+                                        itemID={groceryValue.groceryName}
                                         click={this.removeFromCart}
                                         itemIndex={i}
-                                        name={groceryValue.groceryItem.name}
-                                        quantity={groceryValue.groceryItem.quantity}/>
+                                        name={groceryValue.groceryInventory.name}
+                                        quantity={groceryValue.groceryInventory.quantity}
+                                    />
                                 )
                             })}
                         </ul>

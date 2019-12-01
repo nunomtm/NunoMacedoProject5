@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            header: '',
-        };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         header: '',
+    //     };
+    // }
 
     render() {
         return (

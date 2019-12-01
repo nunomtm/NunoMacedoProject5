@@ -69,8 +69,8 @@ ul {
     left: -1000px;
     top: 5px;
     z-index: 999;
-    background: black;
-    color: black;
+    background: transparent;
+    color: transparent;
 }
 
 .skipLink:focus {
@@ -174,25 +174,28 @@ header h1 {
     width: 100%;
 }
 
-/* .gridStore li {
-  font-size: 1.4rem;
-} */
+.gridStore li {
+    transition: all 0.25s;
+}
 
 .gridStore li:hover,
 .gridStore li:focus {
     cursor: url(./assets/cursorIcon.png), auto;
+    transform: scale(1.1);
 }
 
 .groceryProduct {
     /* Animation Set Up */
     animation-duration: 3s;
     animation-delay: 0;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 2;
+}
+.groceryProduct:hover {
 }
 /* Store Products Styles Ends Here */
 
 /* Shop List Styles Start Here */
-.shoppingList {
+.shoppingCart {
     width: 50%;
     background-image: url(./assets/notePad.png);
     background-size: 100%;
@@ -200,26 +203,26 @@ header h1 {
     background-repeat: no-repeat;
 }
 
-.shoppingList h2 {
+.shoppingCart h2 {
     font-size: 2.5rem;
     padding-top: 22px;
 }
 
-.shoppingList .delete {
+.shoppingCart .delete {
     color: red;
     margin: 0;
     padding-right: 8px;
 }
 
-.shoppingList .delete:hover {
+.shoppingCart .delete:hover {
     cursor: pointer;
 }
 
-.shoppingList ul {
+.shoppingCart ul {
     margin-left: 35px;
 }
 
-.shoppingList li {
+.shoppingCart li {
     font-size: 2rem;
     padding-top: 2%;
     padding-left: 5%;
@@ -243,7 +246,7 @@ header h1 {
     padding-right: 15%;
 }
 
-.increment:hover {
+.increment button:hover {
     cursor: pointer;
 }
 
