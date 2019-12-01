@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import shelf from './assets/resizedShelf.png';
-import apple from './assets/Apple.png';
-
+// import apple from './assets/Apple.png';
 import firebase from './firebase.js';
 import Header from './Header.js';
 import Increment from './Increment.js';
-// import ShoppingItems from './ShoppingItems.js';
+import Footer from './Footer.js';
+import ShoppingItems from './ShoppingItems.js';
+// import assets from './assets/';
 
 class App extends Component {
 
@@ -101,9 +102,17 @@ class App extends Component {
                         <ul className="gridStore">
                             <img className="self" src={shelf} alt="wood shelf with a 4 by 4 size" />
                             {this.state.groceryItems.map((groceryValue, i) => {
+                                // const img = require('./assets/img.png');
                                 return (
                                     <li onClick={this.purchasedItem} data-key={i} key={i}>
-                                        <img className="groceryProduct animated infinite bounce delay-2s" src={apple} alt="apple"/>
+                                        <div>
+                                            <ShoppingItems />
+                                        </div>
+
+                                            {/* img={img}
+                                        /> */}
+
+                                        {/* <img className="groceryProduct animated swing" src={apple} alt="apple"/> */}
                                         {groceryValue.groceryID}
                                     </li>
                                 )
@@ -131,9 +140,7 @@ class App extends Component {
                     </div>
                 </main>
 
-                <footer>
-                    <p className="wrapper">Copyright &copy; Nuno Macedo - 2019</p>
-                </footer>
+                <Footer />
             </div>
         );
     }
