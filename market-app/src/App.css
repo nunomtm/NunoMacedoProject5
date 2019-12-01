@@ -155,7 +155,7 @@ header h1 {
   position: relative;
 }
 
-.gridStore img {
+.gridStore .shelf {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -176,10 +176,10 @@ header h1 {
 }
 
 .groceryProduct {
-  max-height: 30%;
+  /* max-height: 30%;
   max-width: 20%;
   margin-top: 30px;
-  margin-left: 30px;
+  margin-left: 30px; */
 
   animation-duration: 3s;
   animation-delay: 0;

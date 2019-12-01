@@ -1,20 +1,31 @@
 import React, { Component } from 'react';
+import firebase from './firebase.js';
 
 class Increment extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            clicks: 0,
+            clicks: this.props.quantity,
         };
     }
 
     incrementItem = () => {
-        this.setState({ clicks: this.state.clicks + 1 });
+        const increaseClick = this.state.clicks + 1
+        this.updateQuantity(increaseClick)
     }
 
     decreaseItem = () => {
-        this.setState(prevState =>
-            ({ clicks: prevState.clicks ? prevState.clicks - 1 : 0 }));
+        const reduceClick = this.state.clicks <= 1 ? 1 : this.state.clicks - 1;
+        this.updateQuantity(reduceClick)
+    }
+
+    updateQuantity = (quantity) => {
+        this.setState({ clicks: quantity });
+        const dbRef = firebase.database().ref()
+        dbRef.child('shoppingList')
+            .child(this.props.itemID)
+            .update({ quantity: quantity });
+        
     }
 
     render() {

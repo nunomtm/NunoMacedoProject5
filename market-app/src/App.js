@@ -7,6 +7,7 @@ import Header from './Header.js';
 import Increment from './Increment.js';
 import Footer from './Footer.js';
 import ShoppingItems from './ShoppingItems.js';
+import images from './images';
 // import assets from './assets/';
 
 class App extends Component {
@@ -15,7 +16,6 @@ class App extends Component {
         super();
         this.state = {
             groceryItems: [],
-            userPurchase: '',
             itemsPurchased: '',
             shoppingItems: [],
         }
@@ -54,25 +54,13 @@ class App extends Component {
         })
     }
 
-    purchasedItem = (event) => {
-        const shoppingItemName = this.state.groceryItems[event.target.getAttribute('data-key')]
-
-        const shopping = {
-            item: shoppingItemName,
-        }
-
+    purchasedItem = (shoppingItemName) => {
         const dbRef = firebase.database().ref().child('shoppingList')
 
-        if (shoppingItemName !== '') {
-            dbRef.push(shopping.item.groceryID);
-            this.setState({
-                userPurchase: '',
-            })
-        }
-
-        this.setState({
-            purchase: event.target.getAttribute('data-key'),
-        })
+        dbRef.push({
+            name: shoppingItemName,
+            quantity: 1
+        });
     }
 
     addToCart = (event) => {
@@ -100,20 +88,11 @@ class App extends Component {
                     <div className="shoppingStore">
                         <h2>Shopping Store</h2>
                         <ul className="gridStore">
-                            <img className="self" src={shelf} alt="wood shelf with a 4 by 4 size" />
+                            <img className="shelf" src={shelf} alt="wood shelf with a 4 by 4 size"/>
                             {this.state.groceryItems.map((groceryValue, i) => {
-                                // const img = require('./assets/img.png');
                                 return (
-                                    <li onClick={this.purchasedItem} data-key={i} key={i}>
-                                        <div>
-                                            <ShoppingItems />
-                                        </div>
-
-                                            {/* img={img}
-                                        /> */}
-
-                                        {/* <img className="groceryProduct animated swing" src={apple} alt="apple"/> */}
-                                        {groceryValue.groceryID}
+                                    <li onClick={() => this.purchasedItem(groceryValue.groceryID)} data-key={i} key={i}>
+                                        <img className="groceryProduct animated swing" src={images[groceryValue.groceryID]} alt={groceryValue.groceryID}/>
                                     </li>
                                 )
                             })}
@@ -128,12 +107,22 @@ class App extends Component {
                                     <li key={i} className="results">
                                         <span id={groceryValue.groceryID} className="delete" onClick={this.removeFromCart}> x </span>
                                         <div className="listItems">
-                                            {groceryValue.groceryItem}
+                                            {groceryValue.groceryItem.name}
                                             <div className="counter">
-                                                <Increment />
+                                                <Increment
+                                                    itemID={groceryValue.groceryID}
+                                                    name={groceryValue.groceryItem.name}
+                                                    quantity={groceryValue.groceryItem.quantity}/>
                                             </div>
                                         </div>
                                     </li>
+                                    <ListItem
+                                        itemID={groceryValue.groceryID}
+                                        click={this.removeFromCart}
+                                        itemIndex={i}
+                                        name={groceryValue.groceryItem.name}
+                                        quantity={groceryValue.groceryItem.quantity}/>
+
                                 )
                             })}
                         </ul>
