@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import shelf from './assets/resizedShelf.png';
-// import apple from './assets/Apple.png';
 import firebase from './firebase.js';
 import Header from './Header.js';
-import Increment from './Increment.js';
+import ListItem from './ListItem'
 import Footer from './Footer.js';
-import ShoppingItems from './ShoppingItems.js';
 import images from './images';
-// import assets from './assets/';
+
 
 class App extends Component {
 
@@ -104,25 +102,12 @@ class App extends Component {
                         <ul>
                             {this.state.shoppingItems.map((groceryValue, i) => {
                                 return (
-                                    <li key={i} className="results">
-                                        <span id={groceryValue.groceryID} className="delete" onClick={this.removeFromCart}> x </span>
-                                        <div className="listItems">
-                                            {groceryValue.groceryItem.name}
-                                            <div className="counter">
-                                                <Increment
-                                                    itemID={groceryValue.groceryID}
-                                                    name={groceryValue.groceryItem.name}
-                                                    quantity={groceryValue.groceryItem.quantity}/>
-                                            </div>
-                                        </div>
-                                    </li>
                                     <ListItem
                                         itemID={groceryValue.groceryID}
                                         click={this.removeFromCart}
                                         itemIndex={i}
                                         name={groceryValue.groceryItem.name}
                                         quantity={groceryValue.groceryItem.quantity}/>
-
                                 )
                             })}
                         </ul>
