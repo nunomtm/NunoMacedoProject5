@@ -17,7 +17,6 @@ class App extends Component {
         this.state = {
             groceryItems: [],
             groceryCart: [],
-            disabled: false,
         }
     }
 
@@ -57,31 +56,6 @@ class App extends Component {
     purchasedItem = (shoppingItemName) => {
         const dbRef = firebase.database().ref().child('shoppingCart')
 
-        // const handleClick = React.createClass({
-        //     getInitialState: function() {
-        //         return { active: null }
-        //     },
-
-        //     toggle: function(position) {
-        //         if (this.state.active === position) {
-        //             this.setState({ active: null })
-        //         } else {
-        //             this.setState({ active: position })
-        //         }
-        //     },
-
-        //     myColor: function(position) {
-        //         if (this.state.active === position) {
-        //             return "blue";
-        //         }
-        //         return "";
-        //     },
-
-        //     this.setState({
-        //         unable: handleClick,
-        //     })
-        // });
-
         dbRef.push({
             name: shoppingItemName,
             quantity: 1
@@ -105,12 +79,19 @@ class App extends Component {
                         <ul className="gridStore">
                             <img className="shelf" src={shelf} alt="wood shelf with a 4 by 4 size"/>
                             {this.state.groceryItems.map((groceryValue, i) => {
+                                let itemInCart = false;
+                                this.state.groceryCart.forEach( (item) => {
+                                    if(groceryValue.groceryName === item.groceryInventory.name){
+                                        itemInCart = true;
+                                    }
+                                })
                                 return (
                                     <StoreItems 
                                         cartItems={this.purchasedItem}
                                         click={this.removeFromCart}
                                         itemID={groceryValue.groceryName}
                                         itemIndex={i}
+                                        disabled={itemInCart}
                                         productImg={images[groceryValue.groceryName]}
                                     />
                                 )

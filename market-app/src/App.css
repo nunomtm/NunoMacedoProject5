@@ -177,6 +177,10 @@ header .nameJ {
     width: 50%;
 }
 
+.shoppingStore .disabled {
+    filter: grayscale(100%);
+}
+
 .gridStore {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
