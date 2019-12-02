@@ -12,6 +12,7 @@ class Header extends Component {
         return (
             <header>
                 <h1 className="animated fadeInDown">Juno's Market</h1>
+                {/* <span className="nameJ animated hinge">J</span><span className="nameN animated glow">N</span> */}
                 <div className="neon glow">
                     <h3 className="glow">open</h3>
                 </div>

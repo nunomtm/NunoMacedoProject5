@@ -82,14 +82,6 @@ class App extends Component {
         //     })
         // });
 
-        // if (this.state.groceryItems === this.state.groceryCart) {
-        //     return;
-        // } else (this.state.disabled)
-        
-        // this.setState({ 
-        //     disabled: true 
-        // });
-
         dbRef.push({
             name: shoppingItemName,
             quantity: 1
@@ -98,7 +90,7 @@ class App extends Component {
 
     removeFromCart = (event) => {
         const dbRef = firebase.database().ref().child('shoppingCart');
-        
+
         dbRef.child(event.target.id).remove();
     }
 
@@ -116,6 +108,7 @@ class App extends Component {
                                 return (
                                     <StoreItems 
                                         cartItems={this.purchasedItem}
+                                        click={this.removeFromCart}
                                         itemID={groceryValue.groceryName}
                                         itemIndex={i}
                                         productImg={images[groceryValue.groceryName]}
