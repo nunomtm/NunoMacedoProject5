@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0151c328a9c68f9bc13fde1a76ffb187",
+    "revision": "833874f0940e85f73c422c2ee7041cc6",
     "url": "/NunoMacedoProject5/index.html"
   },
   {
-    "revision": "f7d0bf62540aff34e2cf",
-    "url": "/NunoMacedoProject5/static/css/main.7c8df316.chunk.css"
+    "revision": "56b1d2fc6ad7da73e985",
+    "url": "/NunoMacedoProject5/static/css/main.26ca29b5.chunk.css"
   },
   {
     "revision": "4417bffc6ab6c0cbf885",
     "url": "/NunoMacedoProject5/static/js/2.34b8565c.chunk.js"
   },
   {
-    "revision": "f7d0bf62540aff34e2cf",
-    "url": "/NunoMacedoProject5/static/js/main.33170ab2.chunk.js"
+    "revision": "56b1d2fc6ad7da73e985",
+    "url": "/NunoMacedoProject5/static/js/main.6512a009.chunk.js"
   },
   {
     "revision": "a94002384c1d26bf45e2",
@@ -49,7 +49,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "52d6a4ec7c8e968db5e6576efc189ded",
-    "url": "/NunoMacedoProject5/static/media/notePad2.52d6a4ec.png"
+    "url": "/NunoMacedoProject5/static/media/notePad.52d6a4ec.png"
   },
   {
     "revision": "fc156e048def50874e09e40911e31de9",
@@ -65,7 +65,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "bb8a8013b4f1bc918543c303e5dcfeae",
-    "url": "/NunoMacedoProject5/static/media/resizedShelf.bb8a8013.png"
+    "url": "/NunoMacedoProject5/static/media/shelf.bb8a8013.png"
   },
   {
     "revision": "3b5ce510f51a80ba6a629d0f62b5d868",

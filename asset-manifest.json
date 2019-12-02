@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/NunoMacedoProject5/static/css/main.7c8df316.chunk.css",
-    "main.js": "/NunoMacedoProject5/static/js/main.33170ab2.chunk.js",
-    "main.js.map": "/NunoMacedoProject5/static/js/main.33170ab2.chunk.js.map",
+    "main.css": "/NunoMacedoProject5/static/css/main.26ca29b5.chunk.css",
+    "main.js": "/NunoMacedoProject5/static/js/main.6512a009.chunk.js",
+    "main.js.map": "/NunoMacedoProject5/static/js/main.6512a009.chunk.js.map",
     "runtime-main.js": "/NunoMacedoProject5/static/js/runtime-main.efff4c69.js",
     "runtime-main.js.map": "/NunoMacedoProject5/static/js/runtime-main.efff4c69.js.map",
     "static/js/2.34b8565c.chunk.js": "/NunoMacedoProject5/static/js/2.34b8565c.chunk.js",
     "static/js/2.34b8565c.chunk.js.map": "/NunoMacedoProject5/static/js/2.34b8565c.chunk.js.map",
     "index.html": "/NunoMacedoProject5/index.html",
-    "precache-manifest.0c5250bee695451a57194e8574090927.js": "/NunoMacedoProject5/precache-manifest.0c5250bee695451a57194e8574090927.js",
+    "precache-manifest.d638812fbc1b40c976ddddc4164a7767.js": "/NunoMacedoProject5/precache-manifest.d638812fbc1b40c976ddddc4164a7767.js",
     "service-worker.js": "/NunoMacedoProject5/service-worker.js",
-    "static/css/main.7c8df316.chunk.css.map": "/NunoMacedoProject5/static/css/main.7c8df316.chunk.css.map",
+    "static/css/main.26ca29b5.chunk.css.map": "/NunoMacedoProject5/static/css/main.26ca29b5.chunk.css.map",
     "static/media/App.css": "/NunoMacedoProject5/static/media/backgroundImage.2622bfd3.jpg",
     "static/media/apple.png": "/NunoMacedoProject5/static/media/apple.51e7b86c.png",
     "static/media/banana.png": "/NunoMacedoProject5/static/media/banana.73dcd6a1.png",
     "static/media/cherry.png": "/NunoMacedoProject5/static/media/cherry.94a6bfa9.png",
     "static/media/grapes.png": "/NunoMacedoProject5/static/media/grapes.938c9ea0.png",
     "static/media/lettus.png": "/NunoMacedoProject5/static/media/lettus.c6610b9e.png",
-    "static/media/notePad2.png": "/NunoMacedoProject5/static/media/notePad2.52d6a4ec.png",
+    "static/media/notePad.png": "/NunoMacedoProject5/static/media/notePad.52d6a4ec.png",
     "static/media/onion.png": "/NunoMacedoProject5/static/media/onion.fc156e04.png",
     "static/media/orange.png": "/NunoMacedoProject5/static/media/orange.51457667.png",
     "static/media/pineapple.png": "/NunoMacedoProject5/static/media/pineapple.a6d0f39f.png",
-    "static/media/resizedShelf.png": "/NunoMacedoProject5/static/media/resizedShelf.bb8a8013.png",
+    "static/media/shelf.png": "/NunoMacedoProject5/static/media/shelf.bb8a8013.png",
     "static/media/strawberry.png": "/NunoMacedoProject5/static/media/strawberry.3b5ce510.png",
     "static/media/tomato.png": "/NunoMacedoProject5/static/media/tomato.821bf9d2.png",
     "static/media/watermelon.png": "/NunoMacedoProject5/static/media/watermelon.4197b527.png"
@@ -29,7 +29,7 @@
   "entrypoints": [
     "static/js/runtime-main.efff4c69.js",
     "static/js/2.34b8565c.chunk.js",
-    "static/css/main.7c8df316.chunk.css",
-    "static/js/main.33170ab2.chunk.js"
+    "static/css/main.26ca29b5.chunk.css",
+    "static/js/main.6512a009.chunk.js"
   ]
 }
