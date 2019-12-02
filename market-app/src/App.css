@@ -92,7 +92,7 @@ header {
 }
 
 header h1,
-header .nameJ,
+header .nameN1,
 header .nameN {
     font-family: "neon", sans-serif;
     font-size: 7rem;
@@ -105,17 +105,17 @@ header .nameN {
     top: 1%;
     left: 28%;
     /* Animation Set Up */
-    animation-delay: 2s;
+    animation-delay: 3s;
     animation-iteration-count: infinite;
 }
 
-header .nameJ {
+header .nameN1 {
     position: absolute;
     top: 1%;
     left: 28%;
     /* Animation Set Up */
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
+    animation-delay: 5s;
+    /* animation-iteration-count: infinite; */
 }
 
 /* Open Neon Sign Styles */

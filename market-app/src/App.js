@@ -77,7 +77,7 @@ class App extends Component {
                     <div className="shoppingStore">
                         <h2>Store Inventory</h2>
                         <ul className="gridStore">
-                            <img className="shelf" src={shelf} alt="wood shelf with a 4 by 4 size"/>
+                            <img className="shelf" src={ shelf } alt="wood shelf with a 4 by 4 size"/>
                             {this.state.groceryItems.map((groceryValue, i) => {
                                 let itemInCart = false;
                                 this.state.groceryCart.forEach( (item) => {
@@ -87,12 +87,12 @@ class App extends Component {
                                 })
                                 return (
                                     <StoreItems 
-                                        cartItems={this.purchasedItem}
-                                        click={this.removeFromCart}
-                                        itemID={groceryValue.groceryName}
-                                        itemIndex={i}
-                                        disabled={itemInCart}
-                                        productImg={images[groceryValue.groceryName]}
+                                        cartItems={ this.purchasedItem }
+                                        click={ this.removeFromCart }
+                                        itemID={ groceryValue.groceryName }
+                                        itemIndex={ i }
+                                        disabled={ itemInCart }
+                                        productImg={ images[groceryValue.groceryName] }
                                     />
                                 )
                             })}
@@ -102,15 +102,15 @@ class App extends Component {
                     <div className="shoppingCart">
                         <h2>Shopping Cart</h2>
                         <ul>
-                            <img className="notePad" src={notePad} alt="small white note pad" />
+                            <img className="notePad" src={ notePad } alt="small white note pad" />
                             {this.state.groceryCart.map((groceryValue, i) => {
                                 return (
                                     <ListItem
-                                        itemID={groceryValue.groceryName}
-                                        click={this.removeFromCart}
-                                        itemIndex={i}
-                                        name={groceryValue.groceryInventory.name}
-                                        quantity={groceryValue.groceryInventory.quantity}
+                                        itemID={ groceryValue.groceryName }
+                                        click={ this.removeFromCart }
+                                        itemIndex={ i }
+                                        name={ groceryValue.groceryInventory.name }
+                                        quantity={ groceryValue.groceryInventory.quantity }
                                     />
                                 )
                             })}

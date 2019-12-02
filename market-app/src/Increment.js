@@ -23,7 +23,7 @@ class Increment extends Component {
         this.setState({ clicks: quantity });
         const dbRef = firebase.database().ref()
         dbRef.child('shoppingCart')
-            .child(this.props.itemID)
+            .child( this.props.itemID )
             .update({ quantity: quantity });
         
     }
