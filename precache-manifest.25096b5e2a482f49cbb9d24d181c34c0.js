@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "833874f0940e85f73c422c2ee7041cc6",
+    "revision": "28f1fd24d7e22eac13e70c2107b37ade",
     "url": "/NunoMacedoProject5/index.html"
   },
   {
-    "revision": "56b1d2fc6ad7da73e985",
-    "url": "/NunoMacedoProject5/static/css/main.26ca29b5.chunk.css"
+    "revision": "75d3051d56ab8f56e0ea",
+    "url": "/NunoMacedoProject5/static/css/main.92973430.chunk.css"
   },
   {
     "revision": "4417bffc6ab6c0cbf885",
     "url": "/NunoMacedoProject5/static/js/2.34b8565c.chunk.js"
   },
   {
-    "revision": "56b1d2fc6ad7da73e985",
-    "url": "/NunoMacedoProject5/static/js/main.6512a009.chunk.js"
+    "revision": "75d3051d56ab8f56e0ea",
+    "url": "/NunoMacedoProject5/static/js/main.99a9e05a.chunk.js"
   },
   {
     "revision": "a94002384c1d26bf45e2",
     "url": "/NunoMacedoProject5/static/js/runtime-main.efff4c69.js"
   },
   {
-    "revision": "aa82d9488882ea36005dffb581b9afb4",
-    "url": "/NunoMacedoProject5/static/media/BethEllenRegular.aa82d948.ttf"
+    "revision": "e9ee108cd098321ac27b95ebcebfcdf6",
+    "url": "/NunoMacedoProject5/static/media/AudiowideRegular.e9ee108c.ttf"
+  },
+  {
+    "revision": "7ed4b6a5bca63723fcfc69217f85ddb9",
+    "url": "/NunoMacedoProject5/static/media/BadScriptRegular.7ed4b6a5.ttf"
   },
   {
     "revision": "51e7b86c1328d728957c931df6f86dcc",
