@@ -32,7 +32,7 @@ class Increment extends Component {
         return (
             <div className="increment">
                 <button onClick={this.decreaseItem}> - </button>
-                <span className="count"> {this.state.clicks} </span>
+                <span className="count"> {this.props.quantity} </span>
                 <button onClick={this.incrementItem}> + </button>
             </div>
         );

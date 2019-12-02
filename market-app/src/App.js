@@ -17,6 +17,7 @@ class App extends Component {
         this.state = {
             groceryItems: [],
             groceryCart: [],
+            disabled: false,
         }
     }
 
@@ -56,7 +57,7 @@ class App extends Component {
     purchasedItem = (shoppingItemName) => {
         const dbRef = firebase.database().ref().child('shoppingCart')
 
-        // const List = React.createClass({
+        // const handleClick = React.createClass({
         //     getInitialState: function() {
         //         return { active: null }
         //     },
@@ -75,6 +76,18 @@ class App extends Component {
         //         }
         //         return "";
         //     },
+
+        //     this.setState({
+        //         unable: handleClick,
+        //     })
+        // });
+
+        // if (this.state.groceryItems === this.state.groceryCart) {
+        //     return;
+        // } else (this.state.disabled)
+        
+        // this.setState({ 
+        //     disabled: true 
         // });
 
         dbRef.push({
