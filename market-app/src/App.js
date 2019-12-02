@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import firebase from './firebase.js';
 import './App.css';
-import shelf from './assets/resizedShelf.png';
-import notePad from './assets/notePad2.png';
+import shelf from './assets/shelf.png';
+import notePad from './assets/notePad.png';
 import images from './images';
 import Header from './Header.js';
 import StoreItems from './StoreItems.js';
@@ -56,6 +56,27 @@ class App extends Component {
     purchasedItem = (shoppingItemName) => {
         const dbRef = firebase.database().ref().child('shoppingCart')
 
+        // const List = React.createClass({
+        //     getInitialState: function() {
+        //         return { active: null }
+        //     },
+
+        //     toggle: function(position) {
+        //         if (this.state.active === position) {
+        //             this.setState({ active: null })
+        //         } else {
+        //             this.setState({ active: position })
+        //         }
+        //     },
+
+        //     myColor: function(position) {
+        //         if (this.state.active === position) {
+        //             return "blue";
+        //         }
+        //         return "";
+        //     },
+        // });
+
         dbRef.push({
             name: shoppingItemName,
             quantity: 1
@@ -64,7 +85,7 @@ class App extends Component {
 
     removeFromCart = (event) => {
         const dbRef = firebase.database().ref().child('shoppingCart');
-
+        
         dbRef.child(event.target.id).remove();
     }
 

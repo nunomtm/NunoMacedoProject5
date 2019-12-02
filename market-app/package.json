@@ -1,6 +1,6 @@
 {
-  "name": "market-app",
   "homepage": "https://nunomtm.github.io/NunoMacedoProject5",
+  "name": "market-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

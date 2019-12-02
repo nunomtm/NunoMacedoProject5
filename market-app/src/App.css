@@ -192,7 +192,8 @@ header h1 {
 }
 /* Store Products Styles Ends Here */
 
-/* Shop List Styles Start Here */
+
+/* Shoping Cart Styles Start Here */
 .shoppingCart {
     width: 50%;
     position: relative;
@@ -201,7 +202,7 @@ header h1 {
 .shoppingCart .notePad {
     position: absolute;
     z-index: -1;
-    top: -10%;
+    top: -9%;
     bottom: 0;
     left: 0;
     right: 0;
@@ -258,7 +259,7 @@ header h1 {
     background-color: transparent;
     border: none;
 }
-/* Shop List Styles Ends Here */
+/* Shopping Cart Styles Ends Here */
 
 
 /* Footer Style Starts Here */
