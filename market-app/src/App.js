@@ -3,10 +3,10 @@ import firebase from './firebase.js';
 import './App.css';
 import shelf from './assets/shelf.png';
 import notePad from './assets/notePad.png';
-import images from './images';
+import images from './images.js';
 import Header from './Header.js';
 import StoreItems from './StoreItems.js';
-import ListItem from './ListItem'
+import ListItem from './ListItem.js'
 import Footer from './Footer.js';
 
 

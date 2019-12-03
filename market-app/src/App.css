@@ -100,13 +100,19 @@ header .firstLetter{
 }
 
 header .firstLetter {
+    display: block;
     position: absolute;
     top: 1%;
     left: 28%;
     
     /* Animation Set Up */
-    animation-delay: 4s;
+    animation-delay: 3s;
     animation-iteration-count: infinite;
+}
+
+header .secondLetter {
+     /* Animation Set Up */
+    animation-delay: 2s;
 }
 
 /* Open Neon Sign Styles */
