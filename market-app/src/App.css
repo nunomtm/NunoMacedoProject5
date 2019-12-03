@@ -92,30 +92,21 @@ header {
 }
 
 header h1,
-header .nameN1,
-header .nameN {
+header .firstLetter{
     font-family: "neon", sans-serif;
     font-size: 7rem;
     color: #f73838;
     text-shadow: 0 0 3rem #b15454;
 }
 
-header .nameN {
+header .firstLetter {
     position: absolute;
     top: 1%;
     left: 28%;
+    
     /* Animation Set Up */
-    animation-delay: 3s;
+    animation-delay: 4s;
     animation-iteration-count: infinite;
-}
-
-header .nameN1 {
-    position: absolute;
-    top: 1%;
-    left: 28%;
-    /* Animation Set Up */
-    animation-delay: 5s;
-    /* animation-iteration-count: infinite; */
 }
 
 /* Open Neon Sign Styles */
@@ -311,6 +302,9 @@ footer {
 
 /* Ipad Landscape */
  @media (max-width: 1024px) {
+    header .firstLetter {
+        display: none;
+    }
     .groceryStore {
         padding-top: 10%;
     }

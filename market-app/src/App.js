@@ -78,7 +78,7 @@ class App extends Component {
                         <h2>Store Inventory</h2>
                         <ul className="gridStore">
                             <img className="shelf" src={ shelf } alt="wood shelf with a 4 by 4 size"/>
-                            {this.state.groceryItems.map((groceryValue, i) => {
+                            { this.state.groceryItems.map((groceryValue, i) => {
                                 let itemInCart = false;
                                 this.state.groceryCart.forEach( (item) => {
                                     if(groceryValue.groceryName === item.groceryInventory.name){
