@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Increment from './Increment.js';
 
 class ListItem extends Component {
+    
     keypress = (event) => {
         if ((event.key === ' ' || event.key === 'Enter')) {
             this.props.click(event);

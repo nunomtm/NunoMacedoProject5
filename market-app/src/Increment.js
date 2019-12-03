@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from './firebase.js';
 
 class Increment extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -23,7 +24,7 @@ class Increment extends Component {
         this.setState({ clicks: quantity });
         const dbRef = firebase.database().ref()
         dbRef.child('shoppingCart')
-            .child( this.props.itemID )
+            .child(this.props.itemID)
             .update({ quantity: quantity });
         
     }

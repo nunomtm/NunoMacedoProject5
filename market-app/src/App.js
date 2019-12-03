@@ -80,7 +80,7 @@ class App extends Component {
                             <img className="shelf" src={ shelf } alt="wood shelf with a 4 by 4 size"/>
                             { this.state.groceryItems.map((groceryValue, i) => {
                                 let itemInCart = false;
-                                this.state.groceryCart.forEach( (item) => {
+                                this.state.groceryCart.forEach((item) => {
                                     if(groceryValue.groceryName === item.groceryInventory.name){
                                         itemInCart = true;
                                     }
@@ -103,7 +103,7 @@ class App extends Component {
                         <h2>Shopping Cart</h2>
                         <ul>
                             <img className="notePad" src={ notePad } alt="small white note pad" />
-                            {this.state.groceryCart.map((groceryValue, i) => {
+                            { this.state.groceryCart.map((groceryValue, i) => {
                                 return (
                                     <ListItem
                                         itemID={ groceryValue.groceryName }

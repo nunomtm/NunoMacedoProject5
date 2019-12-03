@@ -115,6 +115,14 @@ header .secondLetter {
     animation-delay: 2s;
 }
 
+.moreInfo {
+    font-size: 4rem;
+    color: #f73838;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+}
+
 /* Open Neon Sign Styles */
 .neon {
     position: absolute;
@@ -160,6 +168,7 @@ header .secondLetter {
     100% {text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 55px #ffffff, 0 0 75px #ffffff;}
 }
 /* Glow Animation End */
+/* Header Styles Ends Here */
 
 
 /* Store Products Styles Start Here */
@@ -358,6 +367,9 @@ footer {
     html {
         background-size: 150%;
     }
+    .moreInfo {
+        font-size: 2.6rem;
+    }
     header h1 {
         font-size: 3.5rem;
     }
@@ -385,6 +397,9 @@ footer {
     header h1 {
         font-size: 3rem;
     }
+    .moreInfo {
+        font-size: 2.4rem;
+    }
     .shoppingStore {
         width: 90%;
     }
@@ -402,6 +417,9 @@ footer {
 @media (max-width: 375px) {
     header h1 {
         font-size: 2.6rem;
+    }
+    .moreInfo {
+        font-size: 2.2rem;
     }
     .neon {
         top: 20%;
@@ -430,6 +448,9 @@ footer {
 @media (max-width: 320px) {
     header h1 {
         font-size: 2.2rem;
+    }
+    .moreInfo {
+        font-size: 2rem;
     }
     .neon {
         top: 15%;
