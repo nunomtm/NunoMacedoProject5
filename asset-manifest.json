@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/NunoMacedoProject5/static/css/main.e2e709b4.chunk.css",
-    "main.js": "/NunoMacedoProject5/static/js/main.22975304.chunk.js",
-    "main.js.map": "/NunoMacedoProject5/static/js/main.22975304.chunk.js.map",
+    "main.css": "/NunoMacedoProject5/static/css/main.0f0d8d44.chunk.css",
+    "main.js": "/NunoMacedoProject5/static/js/main.af6d3560.chunk.js",
+    "main.js.map": "/NunoMacedoProject5/static/js/main.af6d3560.chunk.js.map",
     "runtime-main.js": "/NunoMacedoProject5/static/js/runtime-main.efff4c69.js",
     "runtime-main.js.map": "/NunoMacedoProject5/static/js/runtime-main.efff4c69.js.map",
-    "static/js/2.34b8565c.chunk.js": "/NunoMacedoProject5/static/js/2.34b8565c.chunk.js",
-    "static/js/2.34b8565c.chunk.js.map": "/NunoMacedoProject5/static/js/2.34b8565c.chunk.js.map",
+    "static/js/2.de9f8640.chunk.js": "/NunoMacedoProject5/static/js/2.de9f8640.chunk.js",
+    "static/js/2.de9f8640.chunk.js.map": "/NunoMacedoProject5/static/js/2.de9f8640.chunk.js.map",
     "index.html": "/NunoMacedoProject5/index.html",
-    "precache-manifest.92766e937e93825ef4abe871f8069983.js": "/NunoMacedoProject5/precache-manifest.92766e937e93825ef4abe871f8069983.js",
+    "precache-manifest.f73e9b51f9d3e3f8ee89c21e4c005dc7.js": "/NunoMacedoProject5/precache-manifest.f73e9b51f9d3e3f8ee89c21e4c005dc7.js",
     "service-worker.js": "/NunoMacedoProject5/service-worker.js",
-    "static/css/main.e2e709b4.chunk.css.map": "/NunoMacedoProject5/static/css/main.e2e709b4.chunk.css.map",
+    "static/css/main.0f0d8d44.chunk.css.map": "/NunoMacedoProject5/static/css/main.0f0d8d44.chunk.css.map",
     "static/media/App.css": "/NunoMacedoProject5/static/media/backgroundImage.2622bfd3.jpg",
     "static/media/apple.png": "/NunoMacedoProject5/static/media/apple.51e7b86c.png",
     "static/media/banana.png": "/NunoMacedoProject5/static/media/banana.73dcd6a1.png",
     "static/media/cherry.png": "/NunoMacedoProject5/static/media/cherry.94a6bfa9.png",
     "static/media/grapes.png": "/NunoMacedoProject5/static/media/grapes.938c9ea0.png",
+    "static/media/info.jpg": "/NunoMacedoProject5/static/media/info.657e80c8.jpg",
     "static/media/lettus.png": "/NunoMacedoProject5/static/media/lettus.c6610b9e.png",
     "static/media/notePad.png": "/NunoMacedoProject5/static/media/notePad.52d6a4ec.png",
     "static/media/onion.png": "/NunoMacedoProject5/static/media/onion.fc156e04.png",
@@ -28,8 +29,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.efff4c69.js",
-    "static/js/2.34b8565c.chunk.js",
-    "static/css/main.e2e709b4.chunk.css",
-    "static/js/main.22975304.chunk.js"
+    "static/js/2.de9f8640.chunk.js",
+    "static/css/main.0f0d8d44.chunk.css",
+    "static/js/main.af6d3560.chunk.js"
   ]
 }
