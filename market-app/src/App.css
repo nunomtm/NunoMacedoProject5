@@ -259,8 +259,11 @@ header .secondLetter {
 }
 
 .shoppingCart ul {
+    height: 432px;
+    width: 82%;
     margin-left: 10%;
-    padding-top: 5%;
+    margin-top: 6%;
+    overflow: scroll;
 }
 
 .shoppingCart li {
@@ -285,7 +288,7 @@ header .secondLetter {
 }
 
 .counter {
-    padding-right: 15%;
+    padding-right: 5%;
 }
 
 .increment button:hover {
