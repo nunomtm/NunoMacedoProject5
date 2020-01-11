@@ -18,7 +18,7 @@ class Header extends Component {
     render() {
         return (
             <header>
-                <h1 className="animated fadeInDown">Juno's Market</h1><span className="firstLetter glow"><div className="secondLetter animated fadeInDown">N</div></span>
+                <h1 className="animated fadeInDown">Juno's Market</h1>
                 <div className="neon glow">
                     <h3 className="glow">open</h3>
                 </div>
