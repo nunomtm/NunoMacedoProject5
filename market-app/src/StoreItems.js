@@ -16,7 +16,6 @@ class StoreItems extends Component {
         if (this.props.disabled) {
             return;
         }
-    
         this.props.cartItems(this.props.itemID)   
     }
 

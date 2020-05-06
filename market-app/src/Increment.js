@@ -26,7 +26,6 @@ class Increment extends Component {
         dbRef.child('shoppingCart')
             .child(this.props.itemID)
             .update({ quantity: quantity });
-        
     }
 
     render() {

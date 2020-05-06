@@ -72,7 +72,6 @@ class App extends Component {
         return (
             <div>
                 <Header />
-
                 <main className="groceryStore wrapper">
                     <div className="shoppingStore">
                         <h2>Store Inventory</h2>
@@ -117,7 +116,6 @@ class App extends Component {
                         </ul>
                     </div>
                 </main>
-
                 <Footer />
             </div>
         );
