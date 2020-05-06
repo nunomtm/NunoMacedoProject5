@@ -32,7 +32,6 @@ class App extends Component {
                     groceryName: key,
                     groceryInventory: product.Inventory[key],
                 }
-
                 storeItems.push(individualProducts)
             }
 
@@ -42,7 +41,6 @@ class App extends Component {
                     groceryName: key,
                     groceryInventory: product.shoppingCart[key],
                 }
-
                 cartItems.push(cartProducts)
             }
 
