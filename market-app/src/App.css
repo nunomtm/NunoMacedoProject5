@@ -665,6 +665,10 @@ footer {
 		width: 90%;
 		padding-bottom: 8%;
 	}
+	.shoppingStore h2,
+	.shoppingCart h2 {
+		font-size: 2.8rem;
+	}
 	.shoppingCart ul {
 		margin-top: 0;
 		margin-bottom: 0;
