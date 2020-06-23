@@ -370,7 +370,7 @@ header .secondLetter {
 	0% {
 		text-shadow: none;
 	}
-	*/ 10% {
+	10% {
 		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 55px #ffffff, 0 0 75px #ffffff;
 	}
 	20% {
